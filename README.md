@@ -1,5 +1,6 @@
 # github-action-pycodestyle
 A Github Action that runs a [pycodestyle](https://pycodestyle.pycqa.org/en/latest/intro.html) check on a pull request and leaves a comment on your pull request.
+:bulb: Flake8 is more capable than Pycodestyle, you should probably use https://github.com/konciergeMD/github-action-flake8
 
 ## Example
 
