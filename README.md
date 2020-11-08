@@ -23,7 +23,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PRECOMMAND_MESSAGE: You have style errors. See them below.
 ```
- - https://github.com/jwr0/dockerfile-linter-action was a helpful resource in writing the Github API Calls.
 
 # Acknowledgement
 Inspired by https://github.com/ankitvgupta/pycodestyle-action
