@@ -9,16 +9,12 @@ fi
 cd "$GITHUB_WORKSPACE"
 
 set +e
-echo "ENV vars"
-env
-
-echo "All vars"
-set
-
-echo "PWD"
-pwd
-find .
-OUTPUT=$(pycodestyle .)
+if [ -f "${PYCODESTYLE_CONFIG}" ]; then
+    OUTPUT=$(pycodestyle . --config="$PYCODESTYLE_CONFIG" $PYCODESTYLE_OPTS)
+else
+    echo "Warning: $PYCODESTYLE_CONFIG not found"
+    OUTPUT=$(pycodestyle . $PYCODESTYLE_OPTS)
+fi
 SUCCESS=$?
 echo "$OUTPUT"
 set -e
