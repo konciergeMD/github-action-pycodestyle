@@ -1,13 +1,13 @@
 FROM python:3.8-alpine
 
 
-LABEL name="pycodestyle-github-action"
+LABEL name="github-action-pycodestyle"
 LABEL version="1.0.0"
-LABEL repository="http://github.com/konciergeMD/pycodestyle-github-action"
-LABEL homepage="http://github.com/konciergeMD/pycodestyle-github-action"
+LABEL repository="http://github.com/konciergeMD/github-action-pycodestyle"
+LABEL homepage="http://github.com/konciergeMD/github-action-pycodestyle"
 
 LABEL maintainer="Toga <toga@accolade.com>"
-LABEL com.github.actions.name="pycodestyle-github-action"
+LABEL com.github.actions.name="github-action-pycodestyle"
 LABEL com.github.actions.description="Run Pycodestyle Check on a GitHub pull request"
 LABEL com.github.actions.icon="git-pull-request"
 LABEL com.github.actions.color="blue"

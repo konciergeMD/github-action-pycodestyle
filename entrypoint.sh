@@ -1,4 +1,5 @@
 #!/bin/sh
+PYCODESTYLE_CODE_DIR="${PYCODESTYLE_CODE_DIR:-.}"  # check "." directory by default
 set -e
 
 if [ -z "$GITHUB_TOKEN" ]; then
@@ -9,12 +10,8 @@ fi
 cd "$GITHUB_WORKSPACE"
 
 set +e
-if [ -f "${PYCODESTYLE_CONFIG}" ]; then
-    OUTPUT=$(pycodestyle . --config="$PYCODESTYLE_CONFIG" $PYCODESTYLE_OPTS)
-else
-    echo "Warning: $PYCODESTYLE_CONFIG not found"
-    OUTPUT=$(pycodestyle . $PYCODESTYLE_OPTS)
-fi
+echo "Executing \"pycodestyle $PYCODESTYLE_CODE_DIR $PYCODESTYLE_OPTS\""
+OUTPUT=$(pycodestyle $PYCODESTYLE_CODE_DIR $PYCODESTYLE_OPTS)
 SUCCESS=$?
 echo "$OUTPUT"
 set -e
@@ -35,7 +32,7 @@ if [ $SUCCESS -ne 0 ]; then
   echo "$COMMENTS_URL"
   curl -s -S -H "Authorization: token $GITHUB_TOKEN" --header "Content-Type: application/json" --data "$PAYLOAD" "$COMMENTS_URL" > /dev/null
 else
-  echo "There were no pycodestyle issues"
+  echo "No pycodestyle issues found"
 fi
 exit $SUCCESS
 
