@@ -18,7 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: pycodestyle
-      uses: ankitvgupta/pycodestyle-action@master
+      uses: konciergeMD/pycodestyle-github-action@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PRECOMMAND_MESSAGE: You have style errors. See them below.

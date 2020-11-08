@@ -9,6 +9,8 @@ fi
 cd "$GITHUB_WORKSPACE"
 
 set +e
+pwd
+find .
 OUTPUT=$(pycodestyle .)
 SUCCESS=$?
 echo "$OUTPUT"
