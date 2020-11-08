@@ -9,6 +9,13 @@ fi
 cd "$GITHUB_WORKSPACE"
 
 set +e
+echo "ENV vars"
+env
+
+echo "All vars"
+set
+
+echo "PWD"
 pwd
 find .
 OUTPUT=$(pycodestyle .)
