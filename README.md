@@ -3,6 +3,9 @@ A Github Action that runs a [pycodestyle](https://pycodestyle.pycqa.org/en/lates
 
 :bulb: Flake8 is more capable than Pycodestyle, you should probably use https://github.com/konciergeMD/github-action-flake8
 
+# How to add this action to your project
+* Copy the entire `.github` directory from this repository to your project - that's it!
+
 ## Example
 
 #### Create `.github/workflows/pycodestyle.yml`:

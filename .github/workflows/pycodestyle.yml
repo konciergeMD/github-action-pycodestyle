@@ -1,0 +1,13 @@
+on: [pull_request]
+name: Python Pycodestyle Check
+jobs:
+  pycodestyle:
+    name: pycodestyle
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: pycodestyle
+      uses: konciergeMD/github-action-pycodestyle@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PYCODESTYLE_OPTS: "--config=./.github/workflows/pycodestyle_config"  # additional pycodestyle options
